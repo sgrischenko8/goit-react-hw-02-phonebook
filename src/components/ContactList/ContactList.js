@@ -5,11 +5,16 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <ul>
       {contacts.map(el => (
-        <ContactListItem
-          contact={el}
-          onDeleteContact={onDeleteContact}
+        <li
           key={el.id}
-        />
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
+          <ContactListItem contact={el} onDeleteContact={onDeleteContact} />
+        </li>
       ))}
     </ul>
   );
