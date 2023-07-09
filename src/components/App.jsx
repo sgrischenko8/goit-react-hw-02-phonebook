@@ -14,7 +14,7 @@ class App extends React.Component {
   
   formSubmitHandler = (data) => {
     this.setState((prevState) => {
-      return prevState.contacts.some(contact => contact.name === data.name) ?
+      return prevState.contacts.some(contact => contact.name.toLowerCase() === data.name.toLowerCase()) ?
         alert(`${data.name} is already in contacts.`) :
         { contacts: [...prevState.contacts, data] };      
     })
